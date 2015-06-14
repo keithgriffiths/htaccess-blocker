@@ -1,0 +1,99 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+RewriteCond %{HTTP_USER_AGENT} asterias[OR]
+RewriteCond %{HTTP_USER_AGENT} b2w[OR]
+RewriteCond %{HTTP_USER_AGENT} baidu[OR]
+RewriteCond %{HTTP_USER_AGENT} blo.gs[OR]
+RewriteCond %{HTTP_USER_AGENT} blowfish[OR]
+RewriteCond %{HTTP_USER_AGENT} bullseye[OR]
+RewriteCond %{HTTP_USER_AGENT} bunnyslippers[OR]
+RewriteCond %{HTTP_USER_AGENT} collect[OR]
+RewriteCond %{HTTP_USER_AGENT} copernic[OR]
+RewriteCond %{HTTP_USER_AGENT} copyrightcheck[OR]
+RewriteCond %{HTTP_USER_AGENT} cosmos[OR]
+RewriteCond %{HTTP_USER_AGENT} crawl[OR]
+RewriteCond %{HTTP_USER_AGENT} crescent[OR]
+RewriteCond %{HTTP_USER_AGENT} cuil[OR]
+RewriteCond %{HTTP_USER_AGENT} domainsdb.net[OR]
+RewriteCond %{HTTP_USER_AGENT} extractorpro[OR]
+RewriteCond %{HTTP_USER_AGENT} grub[OR]
+RewriteCond %{HTTP_USER_AGENT} harvest[OR]
+RewriteCond %{HTTP_USER_AGENT} hloader[OR]
+RewriteCond %{HTTP_USER_AGENT} httplib[OR]
+RewriteCond %{HTTP_USER_AGENT} humanlinks[OR]
+RewriteCond %{HTTP_USER_AGENT} ia_archiver[OR]
+RewriteCond %{HTTP_USER_AGENT} iron33[OR]
+RewriteCond %{HTTP_USER_AGENT} linkextractorpro[OR]
+RewriteCond %{HTTP_USER_AGENT} majestic-12[OR]
+RewriteCond %{HTTP_USER_AGENT} webbandit[OR]
+RewriteCond %{HTTP_USER_AGENT} webcopier[OR]
+RewriteCond %{HTTP_USER_AGENT} wget[OR]
+RewriteCond %{HTTP_USER_AGENT} whowhere[OR]
+RewriteCond %{HTTP_USER_AGENT} www-collector-e[OR]
+RewriteCond %{HTTP_USER_AGENT} xenu[OR]
+RewriteCond %{HTTP_USER_AGENT} yandex[OR]
+RewriteCond %{HTTP_USER_AGENT} zeus[OR]
+RewriteCond %{HTTP_USER_AGENT} 008[OR]
+RewriteCond %{HTTP_USER_AGENT} AhrefsBot[OR]
+RewriteCond %{HTTP_USER_AGENT} gigabot[OR]
+RewriteCond %{HTTP_USER_AGENT} dotbot[OR]
+RewriteCond %{HTTP_USER_AGENT} MJ12bot[OR]
+RewriteCond %{HTTP_USER_AGENT} exabot[OR]
+RewriteCond %{HTTP_USER_AGENT} rogerbot
+RewriteRule . - [F,L]
+
+SetEnvIfNoCase User-Agent "^aqua_products" bad_bot
+SetEnvIfNoCase User-Agent "^asterias" bad_bot
+SetEnvIfNoCase User-Agent "^b2w" bad_bot
+SetEnvIfNoCase User-Agent "^baidu" bad_bot
+SetEnvIfNoCase User-Agent "^blo.gs" bad_bot
+SetEnvIfNoCase User-Agent "^blowfish" bad_bot
+SetEnvIfNoCase User-Agent "^bullseye" bad_bot
+SetEnvIfNoCase User-Agent "^bunnyslippers" bad_bot
+SetEnvIfNoCase User-Agent "^collect" bad_bot
+SetEnvIfNoCase User-Agent "^copernic" bad_bot
+SetEnvIfNoCase User-Agent "^copyrightcheck" bad_bot
+SetEnvIfNoCase User-Agent "^cosmos" bad_bot
+SetEnvIfNoCase User-Agent "^crawl" bad_bot
+SetEnvIfNoCase User-Agent "^crescent" bad_bot
+SetEnvIfNoCase User-Agent "^cuil" bad_bot
+SetEnvIfNoCase User-Agent "^domainsdb.net" bad_bot
+SetEnvIfNoCase User-Agent "^extractorpro" bad_bot
+SetEnvIfNoCase User-Agent "^grub" bad_bot
+SetEnvIfNoCase User-Agent "^harvest" bad_bot
+SetEnvIfNoCase User-Agent "^hloader" bad_bot
+SetEnvIfNoCase User-Agent "^httplib" bad_bot
+SetEnvIfNoCase User-Agent "^humanlinks" bad_bot
+SetEnvIfNoCase User-Agent "^ia_archiver" bad_bot
+SetEnvIfNoCase User-Agent "^iron33" bad_bot
+SetEnvIfNoCase User-Agent "^linkextractorpro" bad_bot
+SetEnvIfNoCase User-Agent "^majestic-12" bad_bot
+SetEnvIfNoCase User-Agent "^webbandit" bad_bot
+SetEnvIfNoCase User-Agent "^webcopier" bad_bot
+SetEnvIfNoCase User-Agent "^wget" bad_bot
+SetEnvIfNoCase User-Agent "^whowhere" bad_bot
+SetEnvIfNoCase User-Agent "^www-collector-e" bad_bot
+SetEnvIfNoCase User-Agent "^xenu" bad_bot
+SetEnvIfNoCase User-Agent "^yandex" bad_bot
+SetEnvIfNoCase User-Agent "^zeus" bad_bot
+SetEnvIfNoCase User-Agent "^008" bad_bot
+SetEnvIfNoCase User-Agent "^AhrefsBot" bad_bot
+SetEnvIfNoCase User-Agent "^gigabot" bad_bot
+SetEnvIfNoCase User-Agent "^dotbot" bad_bot
+SetEnvIfNoCase User-Agent "^MJ12bot" bad_bot
+
+<Limit GET POST HEAD>
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
+</Limit>
