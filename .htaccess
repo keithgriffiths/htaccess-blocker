@@ -1,5 +1,4 @@
-# The ultimate htaccess blacklist. Used in Wordpress, by Keith Griffiths 2017. 
-# Deny domain access to spammers updated 2017
+# Deny domain access to spammers. Updated 2017. Used in Wordpress, by Keith Griffiths 2017. 
 
 ## Disable the Server Signature ##
 ServerSignature Off
