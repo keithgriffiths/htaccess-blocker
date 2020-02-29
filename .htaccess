@@ -1,4 +1,4 @@
-# Deny domain access to spammers. Updated 2017. Used in Wordpress, by Keith Griffiths 2017. 
+# Deny domain access to spammers. Updated 2020. Used in Wordpress, Developed by Keith Griffiths. 
 
 ## Disable the Server Signature ##
 ServerSignature Off
